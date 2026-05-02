@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg: #020617;
+    --bg-soft: #0f172a;
+    --card: #111827;
+    --border: #1f2937;
+    --text: #e9e5e5;
+    --celula: #9ca3af;
+    --blue: #38bdf8;
+    --yellow: #facc15;
+}
+
+body {
+    background: radial-gradient(circle at top, #0f172a, #020617 70%);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 1.2rem 1.5rem 1rem;
+}
+
+#mensagem {
+    text-align: center;
+    padding: 0rem 1.5rem 1rem;
+}
+
+strong {
+    color: #facc15;
+}
+
+#tabuleiro-visual {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    position: relative;
+}
+
+.celula {
+    width: 100px;
+    height: 100px;
+    background-color: var(--celula);
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+    transition: background 0.1s, transform 0.1s;
+}
+
+.celula:hover {
+    background-color: #dab214;
+    transform: scale(1.01);
+}
+.jogo {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    gap: 20px;             
+    margin-top: 20px;      
+}
+
+.jogo #res {
+    font-size: 1.25rem;
+    text-align: center;    
+    font-family: sans-serif;
+    width: 100%;           
+}
+
+.jogo button {
+    visibility: hidden;
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    background-color: var(--celula);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.jogo button:hover {
+    background-color: #dab214;
+    transform: scale(1.05);
+}
+
+.linha-vitoria {
+    position: absolute;
+    background-color: var(--yellow);
+    z-index: 10;
+    display: none; 
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/*LINHAS*/
+.vitoria-linha-0 .linha-vitoria { display: block; width: 100%; height: 6px; top: 47.5px; left: 0; }
+.vitoria-linha-1 .linha-vitoria { display: block; width: 100%; height: 6px; top: 152.5px; left: 0; }
+.vitoria-linha-2 .linha-vitoria { display: block; width: 100%; height: 6px; top: 257.5px; left: 0; }
+
+/*COLUNAS*/
+.vitoria-coluna-0 .linha-vitoria { display: block; width: 6px; height: 100%; left: 47.5px; top: 0; }
+.vitoria-coluna-1 .linha-vitoria { display: block; width: 6px; height: 100%; left: 152.5px; top: 0; }
+.vitoria-coluna-2 .linha-vitoria { display: block; width: 6px; height: 100%; left: 257.5px; top: 0; }
+
+/*DIAGONAL PRINCIPAL*/
+.vitoria-diag1-0 .linha-vitoria { 
+    display: block; 
+    width: 438px;
+    height: 6px; 
+    top: 0; 
+    left: 0; 
+    transform: rotate(45deg); 
+    transform-origin: 0 50%; 
+}
+
+/*DIAGONAL SECUNDARIA*/
+.vitoria-diag2-0 .linha-vitoria { 
+    display: block; 
+    width: 438px; 
+    height: 6px; 
+    top: 0; 
+    right: 0; 
+    transform: rotate(-45deg); 
+    transform-origin: 100% 50%; 
+}

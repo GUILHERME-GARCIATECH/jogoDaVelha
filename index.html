@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <h1>Jogo da Velha <span>interativo</span></h1>
+    </header>
+
+    <main>
+      <h2 class="mensagem" id="mensagem">Vez do jogador: <strong>O</strong></h2>
+
+      <section class="jogo">
+        <div id="tabuleiro-visual">
+          <div class="linha-vitoria" id="linha-vitoria"></div>
+          
+          <div class="celula" onclick="fazerJogada(0, 0)"></div>
+          <div class="celula" onclick="fazerJogada(0, 1)"></div>
+          <div class="celula" onclick="fazerJogada(0, 2)"></div>
+
+          <div class="celula" onclick="fazerJogada(1, 0)"></div>
+          <div class="celula" onclick="fazerJogada(1, 1)"></div>
+          <div class="celula" onclick="fazerJogada(1, 2)"></div>
+
+          <div class="celula" onclick="fazerJogada(2, 0)"></div>
+          <div class="celula" onclick="fazerJogada(2, 1)"></div>
+          <div class="celula" onclick="fazerJogada(2, 2)"></div>
+        </div>
+        <div id="res">
+        <p>O vencedor sera exibido aqui...</p>
+      </div>
+      <button class="reiniciarTabuleiro" onclick="reiniciarTabuleiro()">Reiniciar Jogo</button>
+      
+      </section>
+      
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
